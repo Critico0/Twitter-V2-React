@@ -24,9 +24,7 @@ app.listen(APP_PORT, () => {
 process.on("SIGINT", function () {
   const { mongoose } = require("./db");
   mongoose.connection.close(function () {
-    console.log(
-      "Mongoose default connection is disconnected due to application termination.\n"
-    );
+    console.log("Mongoose default connection is disconnected due to application termination.\n");
     process.exit(0);
   });
 });
